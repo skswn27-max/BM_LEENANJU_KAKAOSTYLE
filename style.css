@@ -5427,14 +5427,71 @@ body.lookbook .cat-projects .container {
 body.lookbook .hero.hero-light {
     background: var(--bg);
     align-items: stretch;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    min-height: 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+}
+body.lookbook .hero-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.9fr);
+    grid-template-rows: minmax(0, 1fr);
+    width: 100%;
+    height: min(78vh, 720px);
+    min-height: 520px;
+    border-bottom: 1px solid var(--border);
 }
 body.lookbook .hero-content {
     max-width: none;
     width: 100%;
     text-align: left;
-    padding: 140px 48px 56px;
+    padding: 88px 48px 32px;
     align-items: flex-start;
+    justify-content: center;
+}
+body.lookbook .hero-featured {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background: #d9e7f0;
+    min-height: 0;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+body.lookbook .hero-featured img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    display: block;
+    transition: transform 0.7s ease;
+}
+body.lookbook .hero-featured:hover img {
+    transform: scale(1.04);
+}
+body.lookbook .hero-featured-cap {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.92);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+}
+body.lookbook .hero-featured-cap small {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sg-red);
 }
 body.lookbook .hero-title {
     font-size: clamp(3.2rem, 9vw, 7.2rem) !important;
@@ -5458,14 +5515,14 @@ body.lookbook .hero-tagline {
     max-width: 28em;
 }
 body.lookbook .hero-belief {
-    margin: 8px 0 24px;
-    font-size: clamp(3.2rem, 8vw, 7.2rem) !important;
+    margin: 8px 0 20px;
+    font-size: clamp(1.85rem, 4.1vw, 3.35rem) !important;
     font-weight: 800;
-    line-height: 1.12;
+    line-height: 1.22;
     color: var(--text);
-    max-width: none;
+    max-width: 14em;
     text-align: left;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.045em;
 }
 body.lookbook .hero-belief-line {
     display: block;
@@ -5479,7 +5536,7 @@ body.lookbook .hero-method {
     font-size: 0.98rem;
     font-weight: 600;
     line-height: 1.55;
-    color: var(--sg-red);
+    color: var(--text-sub);
     max-width: 36em;
     text-align: left;
 }
@@ -5493,9 +5550,10 @@ body.lookbook .hero-career {
 }
 body.lookbook .hero-howto {
     width: 100%;
-    margin-top: 80px;
-    padding-top: 64px;
-    border-top: 1px solid var(--border);
+    margin-top: 0;
+    padding: 28px 48px 36px;
+    border-top: none;
+    box-sizing: border-box;
 }
 body.lookbook .hero-howto-label {
     letter-spacing: 0.18em;
@@ -5511,24 +5569,33 @@ body.lookbook .hero-howto-steps {
     padding: 0;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 12px;
-    max-width: 1100px;
+    gap: 0;
+    max-width: none;
 }
 body.lookbook .hero-howto-steps li {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
-    padding: 20px 22px 22px;
-    background: var(--bg-subtle, #F5F5F5);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    min-height: 176px;
-    transition: border-color 0.2s ease, transform 0.2s ease;
+    gap: 6px;
+    padding: 4px 28px 4px 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    position: relative;
+}
+body.lookbook .hero-howto-steps li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 18px;
+    height: 1px;
+    background: var(--border-strong);
 }
 body.lookbook .hero-howto-steps li:hover {
-    border-color: rgba(230, 0, 18, 0.35);
-    transform: translateY(-2px);
+    border-color: transparent;
+    transform: none;
 }
 body.lookbook .hero-howto-num {
     font-size: 0.68rem;
@@ -5537,7 +5604,7 @@ body.lookbook .hero-howto-num {
     color: var(--sg-red);
 }
 body.lookbook .hero-howto-title {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     font-weight: 800;
     letter-spacing: -0.03em;
     color: var(--text);
@@ -5545,13 +5612,37 @@ body.lookbook .hero-howto-title {
 }
 body.lookbook .hero-howto-steps p {
     margin: 0;
-    font-size: 0.88rem;
+    font-size: 0.86rem;
     font-weight: 500;
     line-height: 1.5;
     color: var(--text-sub);
     letter-spacing: -0.02em;
+    max-width: 22em;
 }
 body.lookbook .scroll-indicator { display: none; }
+
+.work-index {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 48px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+}
+.work-index span {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+.work-index strong {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-sub);
+}
 
 html:has(article[id]:target) article[id]:not(:target) {
     display: none;
@@ -5584,6 +5675,31 @@ html:has(article[id]:target) article[id]:not(:target) {
     background: var(--bg-subtle);
     min-height: 78vh;
 }
+.lookbook-media-board {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr);
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 4px;
+    min-height: 78vh;
+    height: 78vh;
+}
+.lookbook-media-board img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: cover;
+    display: block;
+}
+.lookbook-media-board .lookbook-kv {
+    grid-row: 1 / 3;
+    object-position: center 82%;
+}
+.lookbook-media-board img:nth-child(2) {
+    object-position: center 88%;
+}
+.lookbook-media-board img:nth-child(3) {
+    object-position: center 42%;
+}
 .lookbook-media img {
     width: 100%;
     height: 100%;
@@ -5591,6 +5707,10 @@ html:has(article[id]:target) article[id]:not(:target) {
     display: block;
     min-height: 78vh;
     transition: transform 0.7s ease;
+}
+.lookbook-media-board img {
+    min-height: 0;
+    height: 100%;
 }
 .lookbook-row:hover .lookbook-media img {
     transform: scale(1.04);
@@ -5639,8 +5759,8 @@ html:has(article[id]:target) article[id]:not(:target) {
 .lookbook-why {
     margin: 0 0 20px;
     font-size: 1.02rem;
-    font-weight: 700;
-    color: var(--sg-red);
+    font-weight: 600;
+    color: var(--text-sub);
     max-width: 36em;
     line-height: 1.55;
 }
@@ -5774,9 +5894,9 @@ html:has(article[id]:target) article .case-hero {
 .case-hero .case-method {
     margin: 12px 0 0;
     font-size: 1.02rem;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.55;
-    color: var(--sg-red);
+    color: var(--text-sub);
     max-width: 36em;
 }
 .case-hero h1.copy-fillin,
@@ -5983,17 +6103,27 @@ p.copy-fillin,
 .case-cycle {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 8px;
+    gap: 0;
     margin-top: 36px;
     padding-top: 24px;
     border-top: 1px solid var(--border);
     list-style: none;
 }
 .case-cycle li {
-    padding: 14px 14px 16px;
-    background: var(--bg-subtle);
-    border: 1px solid var(--border);
+    padding: 14px 22px 16px 0;
+    background: none;
+    border: none;
     min-width: 0;
+    position: relative;
+}
+.case-cycle li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    right: 8px;
+    width: 12px;
+    height: 1px;
+    background: var(--border-strong);
 }
 .case-cycle li strong {
     display: block;
@@ -6009,6 +6139,35 @@ p.copy-fillin,
     font-size: 0.86rem;
     font-weight: 600;
     line-height: 1.45;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+.case-lead {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    padding: 0 48px 36px;
+    max-width: 1100px;
+}
+.case-lead div {
+    padding: 18px 24px 4px 0;
+    border-top: 1px solid var(--border);
+}
+.case-lead small {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.64rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sg-red);
+}
+.case-lead p {
+    margin: 0;
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.55;
     letter-spacing: -0.02em;
     color: var(--text);
 }
@@ -6093,8 +6252,21 @@ p.copy-fillin,
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 58%;
+    object-position: center 82%;
     display: block;
+}
+.product-board-kicker {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    z-index: 1;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.92);
+    font-size: 0.64rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text);
 }
 .product-sku {
     display: flex;
@@ -6189,12 +6361,40 @@ body.lookbook .career-compact {
 }
 
 @media (max-width: 900px) {
+    body.lookbook .hero-split {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: 0;
+    }
+    body.lookbook .hero-featured {
+        min-height: 0;
+        height: auto;
+        aspect-ratio: 4 / 5;
+        order: -1;
+    }
+    body.lookbook .hero-featured img {
+        position: absolute;
+    }
     body.lookbook .hero-content {
-        padding: 120px 24px 40px;
+        padding: 28px 24px 24px;
+    }
+    body.lookbook .hero-howto {
+        padding: 8px 24px 32px;
     }
     body.lookbook .hero-howto-steps {
-        grid-template-columns: 1fr;
-        gap: 16px;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px 12px;
+    }
+    body.lookbook .hero-howto-steps li {
+        padding-right: 0;
+    }
+    body.lookbook .hero-howto-steps li:not(:last-child)::after {
+        display: none;
+    }
+    .work-index {
+        padding: 14px 24px;
+        flex-direction: column;
+        gap: 4px;
     }
     .lookbook-row,
     .lookbook-row.reverse {
@@ -6202,9 +6402,13 @@ body.lookbook .career-compact {
         direction: ltr;
         min-height: 0;
     }
-    .lookbook-media,
-    .lookbook-media img {
-        min-height: 52vh;
+    .lookbook-media:not(.lookbook-media-board),
+    .lookbook-media:not(.lookbook-media-board) img {
+        min-height: 56vh;
+    }
+    .lookbook-media-board {
+        min-height: 56vh;
+        grid-template-columns: 1.2fr 0.8fr;
     }
     .lookbook-copy {
         padding: 36px 24px 48px;
@@ -6229,7 +6433,22 @@ body.lookbook .career-compact {
         gap: 16px;
     }
     .case-cycle {
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        overflow-x: auto;
+        gap: 0;
+        -webkit-overflow-scrolling: touch;
+    }
+    .case-cycle li {
+        flex: 0 0 168px;
+        padding-right: 20px;
+    }
+    .case-lead {
+        grid-template-columns: 1fr;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .case-lead div {
+        padding: 16px 0 8px;
     }
     .process-list li {
         grid-template-columns: 1fr;
@@ -6263,10 +6482,6 @@ body.lookbook .career-compact {
     .copy-board-grid,
     .season-sheet-grid {
         grid-template-columns: 1fr;
-    }
-    body.lookbook .hero-howto-steps {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
     }
 }
 

@@ -155,9 +155,15 @@ function showHashedCase() {
     const articles = document.querySelectorAll('article[id]');
     if (!articles.length) return;
 
-    const id = decodeURIComponent((location.hash || '').replace(/^#/, ''));
-    const match = id ? document.getElementById(id) : null;
-    const matchedArticle = match ? match.closest('article') : null;
+    let id = decodeURIComponent((location.hash || '').replace(/^#/, ''));
+    if (!id) {
+        id = 'olivebe';
+        if (history.replaceState) {
+            history.replaceState(null, '', '#olivebe');
+        }
+    }
+    const match = document.getElementById(id);
+    const matchedArticle = match ? match.closest('article') : document.getElementById('olivebe');
 
     articles.forEach((article) => {
         article.hidden = Boolean(matchedArticle) && article !== matchedArticle;
@@ -166,6 +172,7 @@ function showHashedCase() {
     if (matchedArticle) {
         window.scrollTo(0, 0);
     }
+    syncCaseRail();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -257,6 +264,9 @@ document.head.appendChild(style);
 // 부드러운 스크롤
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        if (this.closest('.case-rail') || this.closest('.case-pager')) {
+            return;
+        }
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
