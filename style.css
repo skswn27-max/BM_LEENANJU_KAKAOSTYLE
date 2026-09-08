@@ -5591,6 +5591,18 @@ html:has(article[id]:target) article[id]:not(:target) {
 .lookbook-row:hover .lookbook-media img {
     transform: scale(1.04);
 }
+.lookbook-media-olivet img {
+    object-position: center 58%;
+}
+.olivet-shot-kv img {
+    object-position: center 62% !important;
+}
+.olivet-shot-keyring img {
+    object-position: center 86% !important;
+}
+.olivet-shot-big img {
+    object-position: center 42% !important;
+}
 .lookbook-copy {
     display: flex;
     flex-direction: column;
