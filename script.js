@@ -321,3 +321,15 @@ const observerNav = new IntersectionObserver((entries) => {
 }, { rootMargin: '-40% 0px -55% 0px' });
 
 sections.forEach(section => observerNav.observe(section));
+
+function syncCaseRail() {
+    const rail = document.querySelector('.case-rail');
+    if (!rail) return;
+    const hash = window.location.hash || '#olivebe';
+    rail.querySelectorAll('a').forEach((link) => {
+        link.classList.toggle('is-current', link.getAttribute('href') === hash);
+    });
+}
+
+window.addEventListener('hashchange', syncCaseRail);
+syncCaseRail();

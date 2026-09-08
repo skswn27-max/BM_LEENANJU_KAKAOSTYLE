@@ -5510,9 +5510,9 @@ body.lookbook .hero-howto-steps {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 12px;
-    max-width: 920px;
+    max-width: 1100px;
 }
 body.lookbook .hero-howto-steps li {
     display: flex;
@@ -5563,11 +5563,15 @@ html:has(article[id]:target) article[id]:not(:target) {
 .lookbook-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 86vh;
+    min-height: 78vh;
     text-decoration: none;
     color: inherit;
     border-bottom: 1px solid var(--border);
     background: var(--bg);
+}
+.lookbook-featured {
+    outline: 1px solid rgba(230, 0, 18, 0.18);
+    outline-offset: -1px;
 }
 .lookbook-row.reverse {
     direction: rtl;
@@ -5578,14 +5582,14 @@ html:has(article[id]:target) article[id]:not(:target) {
 .lookbook-media {
     overflow: hidden;
     background: var(--bg-subtle);
-    min-height: 86vh;
+    min-height: 78vh;
 }
 .lookbook-media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    min-height: 86vh;
+    min-height: 78vh;
     transition: transform 0.7s ease;
 }
 .lookbook-row:hover .lookbook-media img {
@@ -5648,7 +5652,21 @@ html:has(article[id]:target) article[id]:not(:target) {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 86vh;
+    min-height: 78vh;
+}
+.lookbook-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+    padding: 5px 9px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sg-red);
+    background: var(--sg-red-soft);
+    border: 1px solid rgba(230, 0, 18, 0.22);
 }
 .lookbook-keys {
     display: flex;
@@ -5733,7 +5751,10 @@ html:has(article[id]:target) article[id]:not(:target) {
     max-width: 1100px;
 }
 article:first-of-type .case-hero {
-    padding-top: 140px;
+    padding-top: 48px;
+}
+html:has(article[id]:target) article .case-hero {
+    padding-top: 36px;
 }
 .case-hero .case-kicker {
     font-size: 0.7rem;
@@ -5927,6 +5948,240 @@ p.copy-fillin,
     line-height: 1.55;
     letter-spacing: -0.01em;
 }
+
+.case-rail {
+    position: sticky;
+    top: 72px;
+    z-index: 20;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    padding: 10px 48px;
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+    -webkit-overflow-scrolling: touch;
+}
+.case-rail a {
+    flex: 0 0 auto;
+    padding: 6px 12px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-muted);
+    text-decoration: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+}
+.case-rail a:hover,
+.case-rail a.is-current {
+    color: var(--sg-red);
+    border-color: rgba(230, 0, 18, 0.28);
+    background: var(--sg-red-soft);
+}
+
+.case-cycle {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    list-style: none;
+}
+.case-cycle li {
+    padding: 14px 14px 16px;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    min-width: 0;
+}
+.case-cycle li strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.64rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sg-red);
+}
+.case-cycle li span {
+    display: block;
+    font-size: 0.86rem;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+.process-list {
+    padding: 8px 48px 28px;
+    max-width: 1100px;
+}
+.process-list-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    font-weight: 800;
+    color: var(--sg-red);
+    margin-bottom: 16px;
+}
+.process-list ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--border);
+}
+.process-list li {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border);
+}
+.process-step {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sg-red);
+    padding-top: 4px;
+}
+.process-list h3 {
+    margin: 0 0 6px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.4;
+}
+.process-list p {
+    margin: 0;
+    font-size: 0.88rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--text-sub);
+}
+
+.product-board {
+    padding: 8px 48px 48px;
+    max-width: 1200px;
+}
+.product-board-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    font-weight: 800;
+    color: var(--sg-red);
+    margin-bottom: 16px;
+}
+.product-board-grid {
+    display: grid;
+    grid-template-columns: 1.28fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 8px;
+}
+.product-board-hero {
+    grid-row: 1 / 3;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background: #d9e7f0;
+    text-decoration: none;
+    color: inherit;
+    min-height: 520px;
+}
+.product-board-hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 58%;
+    display: block;
+}
+.product-sku {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    min-height: 0;
+}
+.product-sku img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+}
+.product-sku.olivet-shot-keyring img {
+    object-position: center 86%;
+}
+.product-sku.olivet-shot-big img {
+    object-position: center 42%;
+}
+.product-sku figcaption {
+    padding: 14px 16px 16px;
+}
+.product-sku small {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.64rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sg-red);
+}
+.product-sku h3 {
+    margin: 0 0 4px;
+    font-size: 0.98rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+.product-sku p {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.45;
+    color: var(--text-muted);
+}
+
+.case-next-insight {
+    padding: 0 48px 28px;
+    max-width: 1100px;
+}
+.case-next-insight p {
+    margin: 0;
+    padding: 18px 20px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.65;
+    background: var(--sg-red-soft);
+    border-left: 3px solid var(--sg-red);
+}
+.case-next-insight strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    font-weight: 800;
+    color: var(--sg-red);
+}
+
+.case-pager {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0 48px 80px;
+    max-width: 1100px;
+}
+.case-pager a {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-sub);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+}
+.case-pager a:hover {
+    color: var(--sg-red);
+}
+
 body.lookbook .career-compact {
     max-width: 1100px;
     margin: 0 auto;
@@ -5967,16 +6222,40 @@ body.lookbook .career-compact {
         letter-spacing: 0.06em;
     }
     .case-hero {
-        padding: 120px 24px 24px;
+        padding: 28px 24px 24px;
     }
     .case-caption {
         grid-template-columns: 1fr;
         gap: 16px;
     }
+    .case-cycle {
+        grid-template-columns: 1fr 1fr;
+    }
+    .process-list li {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 18px 0;
+    }
+    .product-board-grid {
+        grid-template-columns: 1fr;
+    }
+    .product-board-hero {
+        grid-row: auto;
+        min-height: 0;
+        aspect-ratio: 4 / 5;
+    }
+    .case-rail {
+        top: 60px;
+        padding: 8px 16px;
+    }
     .case-gallery,
     .copy-board,
     .season-sheet,
     .case-judge,
+    .process-list,
+    .product-board,
+    .case-next-insight,
+    .case-pager,
     body.lookbook .career-compact {
         padding-left: 16px;
         padding-right: 16px;
@@ -5985,9 +6264,16 @@ body.lookbook .career-compact {
     .season-sheet-grid {
         grid-template-columns: 1fr;
     }
+    body.lookbook .hero-howto-steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
 }
 
 @media (max-width: 768px) {
+    body.lookbook .hero-howto-steps {
+        grid-template-columns: 1fr;
+    }
     body.lookbook .nav-sub {
         display: flex;
         flex-direction: column;
