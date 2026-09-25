@@ -1,275 +1,397 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이난주 | IP · 콜라보 상품 기획</title>
-    <meta name="description" content="트렌드와 데이터로 컨셉을 고르고, 브랜드·IP를 붙여 상품과 GWP로 출시합니다. Sergio Tacchini × Olivet · DUVETICA · Discovery.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=5">
-</head>
-<body class="lookbook">
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">이난주</a>
-            <ul class="nav-menu">
-                <li><a href="#work">Work</a></li>
-                <li class="nav-has-sub">
-                    <a href="page-cases.html">케이스 상세</a>
-                    <ul class="nav-sub">
-                        <li><a href="page-cases.html#olivebe">01 올리베 IP</a></li>
-                        <li><a href="page-cases.html#duvetica">02 DUVETICA</a></li>
-                        <li><a href="page-cases.html#discovery-2026">03 Discovery</a></li>
-                        <li><a href="page-cases.html#sergio-rebranding">04 Sergio 성수</a></li>
-                        <li><a href="page-cases.html#sergio-hannam">05 한남 플래그십</a></li>
-                        <li><a href="page-cases.html#supermatch">06 슈퍼매치</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="nav-actions">
-                <button class="dark-mode-toggle" id="darkModeToggle" title="다크/라이트 모드 전환" aria-label="다크모드 전환">🌙</button>
-                <div class="hamburger"><span></span><span></span><span></span></div>
-            </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>이난주 | GWP · IP 콜라보 기획</title>
+    <meta
+      name="description"
+      content="캐릭터 IP 협업과 실물 개발, 구매 조건 설계, 출시 운영을 연결한 이난주의 GWP 포트폴리오."
+    />
+    <meta name="theme-color" content="#f5f3ed" />
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/woff2/PretendardVariable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="style.css?v=6" />
+    <script>
+      try {
+        if (localStorage.getItem("nanju-theme") === "dark")
+          document.documentElement.dataset.theme = "dark";
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 이동</a>
+    <header class="site-header">
+      <a class="wordmark" href="index.html">이난주<span>NANJU LEE</span></a>
+      <nav class="main-nav" id="main-nav" aria-label="주 메뉴">
+        <a href="#featured">대표 GWP 사례</a><a href="#work">프로젝트</a
+        ><a href="#capabilities">직무 역량</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-controls">
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          aria-label="다크 모드로 전환"
+          title="화면 테마 전환"
+        >
+          <span aria-hidden="true">◐</span></button
+        ><button
+          id="menu-toggle"
+          class="menu-toggle"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          메뉴<span aria-hidden="true">＋</span>
+        </button>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero wrap" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">IP COLLABORATION & GWP PLANNING</p>
+          <h1>
+            브랜드를 담은 <em>GWP,</em><br />구매할 이유를<br />기획합니다.
+          </h1>
+          <p class="hero-intro">
+            패션 브랜드에서 캐릭터 IP 협업과 GWP 기획·운영을 수행했습니다.
+            브랜드의 컨셉을 실물로 구현하고, 구매 조건과 출시 접점까지
+            연결합니다.
+          </p>
+          <p class="hero-byline">
+            이난주 <span>F&amp;F 브랜드 마케팅 · 5년 차</span>
+          </p>
+          <a class="button" href="page-cases.html#olivebe"
+            >올리베 GWP 사례 보기 <span>↗</span></a
+          >
+          <a class="text-link hero-secondary" href="#work"
+            >전체 프로젝트 살펴보기 ↓</a
+          >
         </div>
-    </nav>
-
-    <section id="home" class="hero hero-light">
-        <div class="hero-split">
-            <div class="hero-content">
-                <div class="hero-sub-label">IP · 콜라보 상품 기획</div>
-                <h1 class="hero-belief">
-                    <span class="hero-belief-line">유저가 사고 싶은 콜라보를</span>
-                    <span class="hero-belief-line hero-belief-accent">데이터와 장면으로 기획합니다.</span>
-                </h1>
-                <p class="hero-method">트렌드·검색에서 컨셉을 고르고, 브랜드와 IP가 같은 이유로 붙게 한 뒤, 상품과 GWP로 출시합니다.</p>
-                <p class="hero-career">F&amp;F 브랜드 마케팅 · Discovery · DUVETICA · Sergio Tacchini × Olivet</p>
-            </div>
-            <a class="hero-featured" href="page-cases.html#olivebe">
-                <img src="images/olivet-kv.jpg" alt="Sergio Tacchini × Olivet, 테니스 룩을 입은 올냥이">
-                <span class="hero-featured-cap">
-                    <small>Featured · IP · GWP</small>
-                    Sergio Tacchini × Olivet
-                </span>
-            </a>
+        <a
+          class="hero-product"
+          href="page-cases.html#olivebe"
+          aria-label="세르지오 타키니와 올리베 한정 키링 GWP 상세"
+        >
+          <img
+            src="images/olivet-keyring.jpg"
+            alt="세르지오 타키니 스웨터를 입은 화이트·그레이 올냥이 한정 키링"
+            class=""
+            loading="eager"
+            decoding="async"
+          />
+          <div class="product-caption">
+            <span>01 / FEATURED GWP</span
+            ><strong>Sergio Tacchini × Olivet</strong
+            ><small>15만 원 이상 구매 고객 대상 한정 콜라보 키링</small
+            ><b aria-hidden="true">↗</b>
+          </div>
+        </a>
+      </section>
+      <section id="featured" class="featured wrap section">
+        <div class="section-heading">
+          <p class="eyebrow">01 / FEATURED CASE</p>
+          <h2>IP 협업부터<br />GWP 출시까지</h2>
+          <p>
+            ‘클래식을 입은 올냥이’<br />세르지오 타키니 한남 플래그십 오픈
+            프로젝트
+          </p>
         </div>
-        <div class="hero-howto" data-animate="fade-up">
-            <div class="hero-howto-label">How I Plan · 지그재그 H&amp;B에 옮기는 사이클</div>
-            <ol class="hero-howto-steps">
-                <li>
-                    <span class="hero-howto-num">01</span>
-                    <strong class="hero-howto-title">트렌드 · 데이터</strong>
-                    <p>이미 움직이는 검색과 장면부터 고릅니다.</p>
-                </li>
-                <li>
-                    <span class="hero-howto-num">02</span>
-                    <strong class="hero-howto-title">컨셉 · 파트너</strong>
-                    <p>브랜드·인물·캐릭터를 같은 이유로 락업합니다.</p>
-                </li>
-                <li>
-                    <span class="hero-howto-num">03</span>
-                    <strong class="hero-howto-title">상품 · GWP</strong>
-                    <p>사은품이 아니라, 들어올 조건이 되는 한정을 만듭니다.</p>
-                </li>
-                <li>
-                    <span class="hero-howto-num">04</span>
-                    <strong class="hero-howto-title">출시 · 성과</strong>
-                    <p>접점을 심고, 검색·매출을 다음 조건으로 남깁니다.</p>
-                </li>
+        <div class="featured-layout">
+          <div class="featured-visual">
+            <img
+              src="images/olivet-kv.jpg"
+              alt="세르지오 타키니와 올리베의 협업 키 비주얼"
+              class=""
+              loading="lazy"
+              decoding="async"
+            /><span>브랜드의 클래식한 이미지와 캐릭터 IP의 만남</span>
+          </div>
+          <div class="featured-copy">
+            <p class="lead">
+              첫 플래그십의 방문 경험과<br />구매 혜택을 함께 기획했습니다.
+            </p>
+            <ol class="work-steps">
+              <li>
+                <span>01</span>
+                <div>
+                  <h3>브랜드에 맞는 IP 컨셉</h3>
+                  <p>
+                    테니스 헤리티지와 올리베의 캐릭터를 연결해 ‘클래식을 입은
+                    올냥이’ 컨셉을 기획했습니다.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span>02</span>
+                <div>
+                  <h3>파트너 협업과 실물 개발</h3>
+                  <p>
+                    올리베 담당자와 협업하며 화이트 올냥이의 디자인과 샘플을
+                    여러 차례 조정했습니다.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span>03</span>
+                <div>
+                  <h3>구매 조건이 있는 GWP</h3>
+                  <p>
+                    한정 콜라보 키링을 15만 원 이상 구매 시 증정하는 혜택으로
+                    구성했습니다.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span>04</span>
+                <div>
+                  <h3>온·오프라인 출시 운영</h3>
+                  <p>
+                    한남 플래그십과 공식 온라인 스토어에서 선보이고, 오픈
+                    메시지·현장 경험과 연결했습니다.
+                  </p>
+                </div>
+              </li>
             </ol>
+            <a class="text-link" href="page-cases.html#olivebe"
+              >제품과 운영 과정 자세히 보기 ↗</a
+            >
+          </div>
         </div>
-    </section>
-
-    <section id="work" class="lookbook-stack">
-        <div class="work-index">
-            <span>Work</span>
-            <strong>문제 → 판단 → 상품 → 성과</strong>
+        <div class="featured-facts">
+          <div><span>GWP</span><strong>한정 콜라보 키링</strong></div>
+          <div><span>증정 조건</span><strong>15만 원 이상 구매</strong></div>
+          <div>
+            <span>출시 채널</span><strong>한남 플래그십 · 공식몰</strong>
+          </div>
         </div>
-        <a class="lookbook-row lookbook-featured" href="page-cases.html#olivebe">
-            <div class="lookbook-media lookbook-media-board">
-                <img class="lookbook-kv" src="images/olivet-kv.jpg" alt="Sergio Tacchini × Olivet 키 비주얼">
-                <img src="images/olivet-keyring.jpg" alt="한정 콜라보 키링">
-                <img src="images/olivet-big.jpg" alt="화이트 빅 올냥이">
+      </section>
+      <section id="capabilities" class="fit-section section">
+        <div class="wrap">
+          <div class="section-heading">
+            <p class="eyebrow">02 / ROLE FIT</p>
+            <h2>지그재그 H&amp;B와<br />연결되는 경험</h2>
+            <p>IP·콜라보 상품 기획자(뷰티)<br />GWP와 파트너 협업을 중심으로</p>
+          </div>
+          <div class="fit-table" role="table" aria-label="직무와 경험 연결">
+            <div class="fit-row fit-table-head" role="row">
+              <span role="columnheader">직무에서 필요한 역량</span
+              ><span role="columnheader">프로젝트에서 수행한 일</span
+              ><span role="columnheader">연결 사례</span>
             </div>
-            <div class="lookbook-copy">
-                <span class="lookbook-badge">Featured · IP · GWP</span>
-                <span class="lookbook-num">01</span>
-                <span class="lookbook-brand">Sergio Tacchini × 올리베 · 캐릭터 IP</span>
-                <h2 class="lookbook-line">클래식을 입은 올냥이</h2>
-                <p class="lookbook-why">첫 플래그십에, 헤리티지만으로는 들어올 이유가 부족했다. 몇 개월 샘플로 화이트 올냥이를 만들고, 키링을 구매 조건으로 걸었다.</p>
-                <div class="lookbook-keys">
-                    <span>캐릭터 IP</span>
-                    <span>한정 GWP</span>
-                    <span>상품 개발</span>
-                </div>
-                <ul class="lookbook-stats">
-                    <li><strong>한정 키링</strong><span>15만원 이상 GWP</span></li>
-                    <li><strong>빅 올냥이</strong><span>현장 점유</span></li>
-                </ul>
-                <span class="lookbook-go">케이스 보기 →</span>
-            </div>
-        </a>
-
-        <a class="lookbook-row" href="page-cases.html#duvetica">
-            <div class="lookbook-media"><img src="images/프로젝트 1_1번 이미지.jpeg" alt="DUVETICA 여배우 패딩"></div>
-            <div class="lookbook-copy">
-                <span class="lookbook-num">02</span>
-                <span class="lookbook-brand">DUVETICA · 데이터 → 컨셉</span>
-                <h2 class="lookbook-line">여배우 패딩</h2>
-                <p class="lookbook-why">헤리티지는 있는데, 대중이 살 문장이 없었다. 이미 치는 말—김지원, 여배우, 패딩—을 상품 이유로 묶었다.</p>
-                <div class="lookbook-keys">
-                    <span>검색 데이터</span>
-                    <span>인물 콜라보</span>
-                    <span>3040 도시여성</span>
-                </div>
-                <ul class="lookbook-stats lookbook-stats-3">
-                    <li><strong>281%↑</strong><span>검색</span></li>
-                    <li><strong>2배</strong><span>매출</span></li>
-                    <li><strong>BEP</strong><span>리브랜딩 후</span></li>
-                </ul>
-                <span class="lookbook-go">케이스 보기 →</span>
-            </div>
-        </a>
-
-        <a class="lookbook-row reverse" href="page-cases.html#discovery-2026">
-            <div class="lookbook-media"><img src="images/discovery-2026.jpg" alt="Discovery Expedition 2026 상반기 리브랜딩"></div>
-            <div class="lookbook-copy">
-                <span class="lookbook-num">03</span>
-                <span class="lookbook-brand">Discovery Expedition · 시즌 컨셉</span>
-                <h2 class="lookbook-line">DISCOVER YOUR ACTIVE SUMMER</h2>
-                <p class="lookbook-why">아웃도어는 있는데, 일상에 입을 이유가 없었다. 변우석과 ‘움직이는 여름’을 한 방향으로 락업했다.</p>
-                <div class="lookbook-keys">
-                    <span>액티브 웰니스</span>
-                    <span>변우석</span>
-                    <span>성수</span>
-                </div>
-                <ul class="lookbook-stats">
-                    <li><strong>2배</strong><span>착용 아이템 매출</span></li>
-                    <li><strong>800건</strong><span>오가닉 SNS</span></li>
-                </ul>
-                <span class="lookbook-go">케이스 보기 →</span>
-            </div>
-        </a>
-
-        <a class="lookbook-row" href="page-cases.html#sergio-rebranding">
-            <div class="lookbook-media"><img src="images/classic-tennis-sq-2.jpg" alt="Sergio Tacchini 성수 팝업"></div>
-            <div class="lookbook-copy">
-                <span class="lookbook-num">04</span>
-                <span class="lookbook-brand">Sergio Tacchini · 패션 브랜드 콜라보</span>
-                <h2 class="lookbook-line">Essential Set-Up</h2>
-                <p class="lookbook-why">테니스 헤리티지를, 성수에서 입을 장면으로 옮겼다. 코트 장비가 아니라 일상의 셋업.</p>
-                <div class="lookbook-keys">
-                    <span>Clubhouse</span>
-                    <span>박지현</span>
-                    <span>성수</span>
-                </div>
-                <ul class="lookbook-stats lookbook-stats-3">
-                    <li><strong>최다</strong><span>캠페인 버즈</span></li>
-                    <li><strong>4배</strong><span>키 아이템 매출</span></li>
-                    <li><strong>300만+</strong><span>조회</span></li>
-                </ul>
-                <span class="lookbook-go">케이스 보기 →</span>
-            </div>
-        </a>
-
-        <a class="lookbook-row reverse" href="page-cases.html#sergio-hannam">
-            <div class="lookbook-media"><img src="images/프로젝트 2_1번 이미지.jpeg" alt="한남 플래그십"></div>
-            <div class="lookbook-copy">
-                <span class="lookbook-num">05</span>
-                <span class="lookbook-brand">한남 플래그십 · 출시 접점</span>
-                <h2 class="lookbook-line">HAN-NAM FLAGSHIP</h2>
-                <p class="lookbook-why">한남동이 글로벌 입점으로 주목될 때, 첫 플래그십을 열 이유가 필요했다. IP(올리베)는 같은 오픈의 다른 접점으로 따로 기획했다.</p>
-                <div class="lookbook-keys">
-                    <span>입점 타이밍</span>
-                    <span>첫 플래그십</span>
-                    <span>포토존</span>
-                </div>
-                <ul class="lookbook-stats">
-                    <li><strong>2배</strong><span>멤버십</span></li>
-                    <li><strong>400+</strong><span>오가닉</span></li>
-                </ul>
-                <span class="lookbook-go">케이스 보기 →</span>
-            </div>
-        </a>
-
-        <a class="lookbook-row" href="page-cases.html#supermatch">
-            <div class="lookbook-media"><img src="images/프로젝트 3_1번 이미지.jpeg" alt="슈퍼매치"></div>
-            <div class="lookbook-copy">
-                <span class="lookbook-num">06</span>
-                <span class="lookbook-brand">슈퍼매치 · 파트너십 접점</span>
-                <h2 class="lookbook-line">코트 위의 브랜드 스토리</h2>
-                <p class="lookbook-why">헤리티지를 번역하지 않고, 현장 접점에 심었습니다. 무대만 Super Match로 옮김.</p>
-                <div class="lookbook-keys">
-                    <span>공식 후원</span>
-                    <span>슈퍼매치 14</span>
-                    <span>접점 전환</span>
-                </div>
-                <ul class="lookbook-stats">
-                    <li><strong>공식 후원</strong><span>슈퍼매치 14</span></li>
-                    <li><strong>3배</strong><span>댓글 이벤트 도달</span></li>
-                </ul>
-                <span class="lookbook-go">케이스 보기 →</span>
-            </div>
-        </a>
-    </section>
-
-    <section id="career" class="skills">
-        <div class="career-compact" data-animate="fade-up">
-            <div class="section-label">CAREER</div>
-            <div class="career-compact-row">
-                <span class="yr">2024.08 –</span>
-                <span class="role">F&amp;F Discovery · 대리</span>
-                <span class="kw">시즌 컨셉 · 인물·IP 콜라보 · 출시 메시지</span>
-            </div>
-            <div class="career-compact-row">
-                <span class="yr">2021.10 – 2024.07</span>
-                <span class="role">F&amp;F SUPRA · 담당</span>
-                <span class="kw">시즌 캠페인 · 이커머스</span>
-            </div>
-            <div class="career-compact-row">
-                <span class="yr">2020.07 – 2021.08</span>
-                <span class="role">JS마케팅 · 프리랜서</span>
-                <span class="kw">영상 편집 · 자막 디자인 · 스크립트 초안</span>
-            </div>
+            <a class="fit-row" role="row" href="page-cases.html#duvetica"
+              ><strong role="cell">트렌드 기반 컨셉 기획</strong>
+              <p role="cell">
+                검색 관심사와 타깃을 분석해 브랜드·시즌 컨셉 구체화
+              </p>
+              <span role="cell">DUVETICA ↗</span></a
+            >
+            <a class="fit-row" role="row" href="page-cases.html#olivebe"
+              ><strong role="cell">IP 협업과 상품 개발</strong>
+              <p role="cell">
+                캐릭터 IP사와 협업하고, 디자인·반복 샘플로 실물 구현
+              </p>
+              <span role="cell">올리베 ↗</span></a
+            >
+            <a class="fit-row" role="row" href="page-cases.html#olivebe"
+              ><strong role="cell">GWP 및 구매 프로모션</strong>
+              <p role="cell">
+                한정 키링과 구매 금액 기준을 결합한 증정 조건 설계
+              </p>
+              <span role="cell">올리베 ↗</span></a
+            >
+            <a class="fit-row" role="row" href="page-cases.html#sergio-hannam"
+              ><strong role="cell">출시와 고객 접점 운영</strong>
+              <p role="cell">
+                플래그십·공식몰 출시와 현장·콘텐츠 커뮤니케이션 연결
+              </p>
+              <span role="cell">한남 플래그십 ↗</span></a
+            >
+            <a class="fit-row" role="row" href="page-cases.html#supermatch"
+              ><strong role="cell">외부 파트너 협업</strong>
+              <p role="cell">
+                캐릭터 IP·스포츠 파트너십을 브랜드 경험과 이벤트로 실행
+              </p>
+              <span role="cell">슈퍼매치 ↗</span></a
+            >
+            <a class="fit-row" role="row" href="page-cases.html#duvetica"
+              ><strong role="cell">출시 후 성과 분석</strong>
+              <p role="cell">
+                검색·매출·콘텐츠 반응으로 캠페인 성과를 확인하고 후속 기획에 활용
+              </p>
+              <span role="cell">DUVETICA ↗</span></a
+            >
+          </div>
+          <p class="fit-note">
+            패션 브랜드에서 쌓은 GWP와 협업 경험을 바탕으로, 뷰티 브랜드의
+            특성과 고객 취향에 맞는 콜라보를 기획하고자 합니다.
+          </p>
         </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-wrapper">
-                <div class="contact-content">
-                    <div class="section-label">CONTACT</div>
-                    <h2 class="contact-title">다음 콜라보를 붙일 때</h2>
-                    <p class="contact-description">패션에서 컨셉·IP·GWP·출시 사이클을 리드했습니다. 뷰티 ODM은 없습니다. 지그재그 H&amp;B의 콜라보 기획에, 이 판단을 옮기려 합니다.</p>
-                    <div class="contact-links">
-                        <a href="mailto:skswn2@naver.com" class="contact-link">
-                            <span class="link-label">Email</span>
-                            <span class="link-value">skswn2@naver.com</span>
-                        </a>
-                        <a href="tel:010-6808-5398" class="contact-link">
-                            <span class="link-label">Phone</span>
-                            <span class="link-value">010-6808-5398</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact-profile">
-                    <div class="profile-image-wrapper">
-                        <img src="images/이난주_프로필사진_new.png" alt="이난주 프로필">
-                    </div>
-                </div>
-            </div>
+      </section>
+      <section id="work" class="work-section section wrap">
+        <div class="section-heading">
+          <p class="eyebrow">03 / SELECTED WORK</p>
+          <h2>브랜드별 GWP<br />프로젝트 경험</h2>
+          <p>
+            시즌 캠페인, 팝업, 파트너십 안에서<br />함께 수행한 GWP 기획·운영
+          </p>
         </div>
-        <div class="contact-glow"></div>
-    </section>
-
+        <p class="section-intro">
+          대표 IP 사례 외에도 DUVETICA, Discovery, 세르지오 타키니 프로젝트에서
+          GWP 업무를 진행했습니다. 각 사례에서는 GWP 업무 범위와 캠페인 기획
+          경험을 함께 소개합니다.
+        </p>
+        <div class="project-list">
+          <a class="project-row" href="page-cases.html#duvetica"
+            ><div class="project-image">
+              <img
+                src="images/프로젝트 1_1번 이미지.jpeg"
+                alt="DUVETICA 프로젝트 현장 및 캠페인 이미지"
+                class=""
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="project-copy">
+              <span class="eyebrow">02 / 리브랜딩 · GWP</span>
+              <p class="project-brand">DUVETICA</p>
+              <h3>고객의 관심에서 시작한<br />시즌 GWP와 브랜드 컨셉</h3>
+              <p>
+                3040 도시여성의 검색 관심사를 바탕으로 만든 ‘여배우 패딩’ 컨셉.
+                GWP 업무를 포함해 김지원 캠페인과 온·오프라인 프로모션을 함께
+                진행했습니다.
+              </p>
+              <div class="project-role">
+                <span>담당</span>GWP 기획·운영 및 캠페인 실행
+              </div>
+              <span class="project-link">프로젝트 상세 ↗</span>
+            </div></a
+          ><a class="project-row" href="page-cases.html#discovery-2026"
+            ><div class="project-image">
+              <img
+                src="images/discovery-2026.jpg"
+                alt="DISCOVERY EXPEDITION 프로젝트 현장 및 캠페인 이미지"
+                class=""
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="project-copy">
+              <span class="eyebrow">03 / 시즌 캠페인 · GWP</span>
+              <p class="project-brand">DISCOVERY EXPEDITION</p>
+              <h3>액티브 웰니스 캠페인과<br />함께 진행한 시즌 GWP</h3>
+              <p>
+                ‘액티브 웰니스’의 시즌 메시지를 중심으로 GWP 업무와 성수 현장,
+                변우석 캠페인, 디지털 콘텐츠를 함께 진행했습니다.
+              </p>
+              <div class="project-role">
+                <span>담당</span>GWP 기획·운영 및 캠페인 실행
+              </div>
+              <span class="project-link">프로젝트 상세 ↗</span>
+            </div></a
+          ><a class="project-row" href="page-cases.html#sergio-rebranding"
+            ><div class="project-image">
+              <img
+                src="images/classic-tennis-sq-2.jpg"
+                alt="SERGIO TACCHINI 프로젝트 현장 및 캠페인 이미지"
+                class=""
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="project-copy">
+              <span class="eyebrow">04 / 성수 팝업 · GWP</span>
+              <p class="project-brand">SERGIO TACCHINI</p>
+              <h3>클럽하우스 경험과<br />함께 기획한 팝업 GWP</h3>
+              <p>
+                테니스 헤리티지를 성수의 일상적인 착장으로 제안한 프로젝트. 팝업
+                GWP 업무와 상품 메시지, 박지현 캠페인을 함께 진행했습니다.
+              </p>
+              <div class="project-role">
+                <span>담당</span>GWP 기획·운영 및 캠페인 실행
+              </div>
+              <span class="project-link">프로젝트 상세 ↗</span>
+            </div></a
+          ><a class="project-row" href="page-cases.html#supermatch"
+            ><div class="project-image">
+              <img
+                src="images/프로젝트 3_1번 이미지.jpeg"
+                alt="SERGIO TACCHINI 프로젝트 현장 및 캠페인 이미지"
+                class=""
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="project-copy">
+              <span class="eyebrow">05 / 스포츠 파트너십 · GWP</span>
+              <p class="project-brand">SERGIO TACCHINI</p>
+              <h3>테니스 현장에서 진행한<br />파트너십과 GWP 운영</h3>
+              <p>
+                슈퍼매치 14 공식 후원 프로젝트에서 GWP 업무를 수행하고, 테니스
+                현장의 브랜드 접점과 공식몰 이벤트를 함께 운영했습니다.
+              </p>
+              <div class="project-role">
+                <span>담당</span>GWP 기획·운영 및 캠페인 실행
+              </div>
+              <span class="project-link">프로젝트 상세 ↗</span>
+            </div></a
+          >
+        </div>
+      </section>
+      <section class="career-section section wrap" id="career">
+        <div class="section-heading">
+          <p class="eyebrow">04 / EXPERIENCE</p>
+          <h2>브랜드의 이해를<br />협업의 출발점으로</h2>
+        </div>
+        <div class="career-row">
+          <span>2021.10 –</span>
+          <div>
+            <h3>F&amp;F · 브랜드 마케팅</h3>
+            <p>Discovery Expedition · DUVETICA · Sergio Tacchini · SUPRA</p>
+          </div>
+          <p>
+            브랜드 및 시즌 컨셉 기획<br />GWP · IP 협업 · 온·오프라인 프로모션
+          </p>
+        </div>
+        <div class="career-row">
+          <span>2020.07 – 2021.08</span>
+          <div>
+            <h3>JS마케팅 · 프리랜서</h3>
+            <p>콘텐츠 제작</p>
+          </div>
+          <p>영상 편집 · 자막 디자인 · 스크립트 초안</p>
+        </div>
+      </section>
+      <section id="contact" class="contact-section section">
+        <div class="wrap contact-layout">
+          <div>
+            <p class="eyebrow">CONTACT</p>
+            <h2>다음 GWP와 콜라보를<br />함께 기획하고 싶습니다.</h2>
+            <p>
+              브랜드의 개성이 담긴 실물과 고객이 선택할 구매 혜택.<br />패션에서
+              쌓은 경험을 지그재그 뷰티의 협업으로 이어가겠습니다.
+            </p>
+            <a href="mailto:skswn2@naver.com">skswn2@naver.com ↗</a
+            ><a href="tel:01068085398">010-6808-5398</a>
+          </div>
+          <img
+            src="images/이난주_프로필사진_new.png"
+            alt="이난주 프로필"
+            class=""
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </section>
+    </main>
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 이난주 · IP · 콜라보 상품 기획</p>
-        </div>
+      <span>© 이난주</span><span>IP COLLABORATION & GWP PLANNING</span
+      ><a href="#main">맨 위로 ↑</a>
     </footer>
-    <script src="script.js?v=3"></script>
-</body>
+    <script src="script.js?v=6"></script>
+  </body>
 </html>
