@@ -1568,3 +1568,17 @@ a:hover .project-link,
     padding-top: 40px;
   }
 }
+
+/* DUVETICA padding keyring: preserve the complete supplied product image. */
+.project-image.product-image { background: #f7f7f7; }
+.project-image.product-image img { object-fit: contain; }
+.padding-gwp { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; padding-bottom: 64px; }
+.padding-gwp-visual { margin: 0; min-width: 0; }
+.padding-gwp-visual img { display: block; width: 100%; height: auto; }
+.padding-gwp-visual figcaption { margin-top: 14px; font-size: 12px; color: var(--muted); letter-spacing: .08em; }
+.padding-gwp-copy h2 { margin: 14px 0 22px; font-size: clamp(24px, 2.5vw, 34px); line-height: 1.45; letter-spacing: -.04em; }
+.padding-gwp-copy > p:not(.eyebrow) { font-size: 16px; line-height: 1.9; color: var(--muted); }
+.padding-gwp-copy .role-summary { margin-top: 26px; }
+@media (max-width: 760px) {
+ .padding-gwp { grid-template-columns: 1fr; gap: 28px; padding-bottom: 44px; }
+}
